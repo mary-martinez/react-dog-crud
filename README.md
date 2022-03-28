@@ -1,25 +1,9 @@
-# Alchemy React Base Template
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-Use this template for all your "from scratch" deliverables. To start, simply run
-
-- `npm install`
-- `npm start`
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# React Dog CRUD 
+1. Set up app.js, react router, header (component), and home (view)
+  - netlify, supabase, secrets
+1. dogList (component) -> general overview of dogs, clickable divs that route to /dogs/:id (includes updating router) [/dogs]
+1. dogDetails (view + component) -> params, fetchDogById, display details [/dogs/:id]
+1. newDog (view + dogForm component) -> form with multiple fields + save button, insert row in supabase that contains new doge info [/dogs/new]
+1. dogDetails --- add edit + delete buttons
+1. editDetails (view + route to existing dogForm component and add relevant if statement) -> params, fetchDogById, display ......
+to be continued once I make progress on the initial steps
