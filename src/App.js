@@ -5,6 +5,7 @@ import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import Home from './Views/Home/Home';
 import Header from './Components/Header/Header';
+import DogDetailView from './Views/DogDetails/DogDetailView';
 
 function App() {
   return (
@@ -12,8 +13,11 @@ function App() {
       <Header />
       <Switch>
         <div className="App">
-          <Route path='/'>
+          <Route exact path='/'>
             <Home />
+          </Route>
+          <Route path='/dogs/:id'>
+            <DogDetailView />
           </Route>
         </div>
 

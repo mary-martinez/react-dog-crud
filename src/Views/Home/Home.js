@@ -22,6 +22,7 @@ export default function Home() {
   return (
     <div>
       <h1>Checkout Our Dogs</h1>
+      <h3>Click an image to learn more about that dog.</h3>
       <DogList {...{ dogs }} />
     </div>
   );
