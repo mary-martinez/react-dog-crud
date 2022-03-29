@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
 
-export default function DogForm({ dog, setDog }) {
-  const [tempDog, setTempDog] = useState({ 'name': dog.name, 'age': dog.age, 'bio': dog.bio, 'breed': dog.breed, 'image': dog.image });
+export default function DogForm({ dog, setDog, handleSubmit }) {
   const updateDog = (attribute, value) => {
-    const modDog = { ...tempDog, [attribute]: value };
-    setTempDog(modDog);
+    const modDog = { ...dog, [attribute]: value };
+    setDog(modDog);
   };
 
   return (
@@ -16,21 +15,21 @@ export default function DogForm({ dog, setDog }) {
       </label>
       <label>
         Breed:
-        <input type='text' onChange={(e) => updateDog('breed', e.target.value)}></input>
+        <input value={dog.breed} type='text' onChange={(e) => updateDog('breed', e.target.value)}></input>
       </label>
       <label>
         Bio:
-        <input type='text' onChange={(e) => updateDog('bio', e.target.value)}></input>
+        <input value={dog.bio} type='text' onChange={(e) => updateDog('bio', e.target.value)}></input>
       </label>
       <label>
         Image Location:
-        <input type='text' onChange={(e) => updateDog('image', e.target.value)}></input>
+        <input value={dog.image} type='text' onChange={(e) => updateDog('image', e.target.value)}></input>
       </label>
       <label>
         Age:
-        <input type='number' onChange={(e) => updateDog('age', e.target.value)}></input>
+        <input value={dog.age} type='number' onChange={(e) => updateDog('age', e.target.value)}></input>
       </label>
-      <button onClick={setDog(tempDog)}>Save</button>
+      <button onClick={handleSubmit}>Save</button>
 
     </div>
   );
