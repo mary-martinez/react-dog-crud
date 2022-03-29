@@ -6,8 +6,13 @@ export default function Header() {
     <div>
       <ul>
         <li>
-          <NavLink to='/'>
+          <NavLink exact to='/'>
             Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink exact to='/admin'>
+            Add a Dog
           </NavLink>
         </li>
       </ul>

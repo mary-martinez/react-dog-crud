@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 import Home from './Views/Home/Home';
 import Header from './Components/Header/Header';
 import DogDetailView from './Views/DogDetails/DogDetailView';
+import NewDog from './Views/Admin/NewDog';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path='/dogs/:id'>
             <DogDetailView />
+          </Route>
+          <Route path='/admin'>
+            <NewDog />
           </Route>
         </div>
 
