@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useState } from 'react/cjs/react.development';
 import DogForm from '../../Components/DogForm/DogForm';
 import { addANewDog } from '../../services/dogs';
 
@@ -18,7 +18,7 @@ export default function NewDog() {
 
   const handleSubmit = async () => {
     try {
-      const data = await addANewDog(dog);
+      await addANewDog(dog);
       history.push('/');
     } catch (e) {
       setError('something went wrong');
