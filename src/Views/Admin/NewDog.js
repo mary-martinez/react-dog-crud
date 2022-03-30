@@ -30,12 +30,15 @@ export default function NewDog() {
       }, 2000);
     } catch (e) {
       setError('something went wrong');
+      setTimeout(() => {
+        setError('');
+      }, 2000);
     }
   };
 
   return (
     <div>
-      {error && <p>{error}</p>}
+      {error && <p className='error'>{error}</p>}
       {success && <h3 className='success'>{`Success adding ${dog.name}!`}</h3>}
       <h1>Add a Dog!</h1>
       <DogForm {...{ dog, setDog, handleSubmit }} />

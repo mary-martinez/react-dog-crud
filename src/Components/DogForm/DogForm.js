@@ -7,7 +7,7 @@ export default function DogForm({ dog, setDog, handleSubmit }) {
   };
 
   return (
-    <div>
+    <div className='dog-form'>
       <label>
         Name:
         <input value={dog.name} type='text' onChange={(e) => updateDog('name', e.target.value)}></input>
