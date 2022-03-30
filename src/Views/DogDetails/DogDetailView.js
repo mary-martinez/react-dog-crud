@@ -9,7 +9,6 @@ export default function DogDetailView() {
   const dogId = params.id;
   const [dog, setDog] = useState({});
   const [loading, setLoading] = useState(true);
-  //useEffect to fetchDogById when the dogId changes
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchDogById(dogId);

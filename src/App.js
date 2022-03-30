@@ -6,6 +6,7 @@ import Home from './Views/Home/Home';
 import Header from './Components/Header/Header';
 import DogDetailView from './Views/DogDetails/DogDetailView';
 import NewDog from './Views/Admin/NewDog';
+import EditDog from './Views/Edit/EditDog';
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
           <Route exact path='/'>
             <Home />
           </Route>
-          <Route path='/dogs/:id'>
+          <Route exact path='/dogs/:id/edit'>
+            <EditDog />
+          </Route>
+          <Route exact path='/dogs/:id'>
             <DogDetailView />
           </Route>
           <Route path='/admin'>

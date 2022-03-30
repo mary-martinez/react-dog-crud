@@ -13,3 +13,8 @@ export async function addANewDog(dog) {
   const resp = await client.from('dogs').insert(dog);
   return checkError(resp);
 }
+
+export async function editDogById(dog, id) {
+  const resp = await client.from('dogs').update(dog).match({ id });
+  return checkError(resp);
+}
