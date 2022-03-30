@@ -29,12 +29,6 @@ export default function DogDetail({ dog }) {
       <p>{bio}</p>
       <div className='buttons'>
         <Link to={`/dogs/${id}/edit`}>Edit</Link>
-        {/* <Link to={'/'}>
-          <Delete {...{ id }} />
-        </Link> */}
-        {/* <span onClick={() => handleDelete()}>
-          <Link to={'/'}>Delete</Link>
-        </span> */}
         <p onClick={() => handleDelete()}>Delete</p>
       </div>
     </div>

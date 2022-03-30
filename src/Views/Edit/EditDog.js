@@ -10,6 +10,7 @@ export default function EditDog() {
   const params = useParams();
   const history = useHistory();
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     try {
@@ -19,18 +20,29 @@ export default function EditDog() {
       };
       fetchData();
     } catch (e) {
-      setError(e);
+      setError(`We're experiencing an error with ${e.message}`);
     }
   }, [params.id]);
 
   const handleSubmit = async () => {
-    await editDogById(dog, params.id);
-    history.push(`/dogs/${params.id}`);
+    try {
+      await editDogById(dog, params.id);
+      setSuccess(true);
+      setTimeout(() => {
+        history.push(`/dogs/${params.id}`);
+      }, 2000);
+    } catch {
+      setError(`There was an error editing this info for ${dog.name}. Please try again.`);
+      setTimeout(() => {
+        setError('');
+      }, 2000);
+    }
   };
 
   return (
     <div>
-      {error && <p>{`We're experiencing an error with ${error}`}</p>}
+      {error && <p className='error'>{error}</p>}
+      {success && <h3 className='success'>{`Success editing ${dog.name}!`}</h3>}
       <DogForm {...{ dog, setDog, handleSubmit }} />
     </div>
   );
