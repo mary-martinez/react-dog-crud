@@ -1,10 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { deleteDogById } from '../../services/dogs';
+import { useHistory } from 'react-router-dom';
 
 export default function DogDetail({ dog }) {
   const { name, bio, image, breed, age, id } = { ...dog };
+  const [error, setError] = useState('');
+
+  const history = useHistory();
+
+  const handleDelete = async () => {
+    try {
+      await deleteDogById(id);
+      history.push('/');
+    } catch {
+      setError('There was an error removing this dog.');
+    }
+
+  };
   return (
     <div>
+      {error && <p>{error}</p>}
       <h2>{name}</h2>
       <img src={image} />
       <h3>{`Breed: ${breed}`}</h3>
@@ -12,6 +29,13 @@ export default function DogDetail({ dog }) {
       <p>{bio}</p>
       <div className='buttons'>
         <Link to={`/dogs/${id}/edit`}>Edit</Link>
+        {/* <Link to={'/'}>
+          <Delete {...{ id }} />
+        </Link> */}
+        {/* <span onClick={() => handleDelete()}>
+          <Link to={'/'}>Delete</Link>
+        </span> */}
+        <p onClick={() => handleDelete()}>Delete</p>
       </div>
     </div>
   );

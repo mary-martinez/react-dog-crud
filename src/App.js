@@ -10,10 +10,10 @@ import EditDog from './Views/Edit/EditDog';
 
 function App() {
   return (
-    <BrowserRouter >
-      <Header />
-      <Switch>
-        <div className="App">
+    <div className="App">
+      <BrowserRouter >
+        <Header />
+        <Switch>
           <Route exact path='/'>
             <Home />
           </Route>
@@ -26,10 +26,9 @@ function App() {
           <Route path='/admin'>
             <NewDog />
           </Route>
-        </div>
-
-      </Switch>
-    </BrowserRouter>
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 }
 

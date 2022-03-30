@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 import DogList from '../../Components/DogList/DogList';
 import { fetchDogs } from '../../services/dogs';
 

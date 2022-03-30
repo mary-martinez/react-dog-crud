@@ -1,11 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import DogForm from '../../Components/DogForm/DogForm';
 import { addANewDog } from '../../services/dogs';
 
 export default function NewDog() {
-  const [dog, setDog] = useState({ name: '', age: null, breed: '', bio: '', image: '' });
+  const [dog, setDog] = useState({ name: '', age: '', breed: '', bio: '', image: '' });
   const [error, setError] = useState('');
   const history = useHistory();
   // useEffect(() => {

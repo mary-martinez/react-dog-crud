@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 import DogForm from '../../Components/DogForm/DogForm';
 import { editDogById, fetchDogById } from '../../services/dogs';
 

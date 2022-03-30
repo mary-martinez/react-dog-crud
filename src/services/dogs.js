@@ -18,3 +18,8 @@ export async function editDogById(dog, id) {
   const resp = await client.from('dogs').update(dog).match({ id });
   return checkError(resp);
 }
+
+export async function deleteDogById(id) {
+  const resp = await client.from('dogs').delete('*').match({ id });
+  return checkError(resp);
+}
