@@ -23,7 +23,7 @@ function App() {
           <Route exact path='/'>
             <Home />
           </Route>
-          <Route path='/auth'>
+          <Route exact path='/auth'>
             <Auth setCurrentUser={setCurrentUser} />
           </Route>
           <Route exact path='/dogs/:id/edit'>
