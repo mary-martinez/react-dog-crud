@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { deleteDogById } from '../../services/dogs';
 import { useHistory } from 'react-router-dom';
+import './DogDetail.css';
 
-export default function DogDetail({ dog }) {
+export default function DogDetail({ dog, currentUser }) {
   const { name, bio, image, breed, age, id } = { ...dog };
   const [error, setError] = useState('');
 
@@ -27,10 +28,12 @@ export default function DogDetail({ dog }) {
       <h3>{`Breed: ${breed}`}</h3>
       <h3>{`Age: ${age}`}</h3>
       <p>{bio}</p>
-      <div className='buttons'>
-        <Link to={`/dogs/${id}/edit`}>Edit</Link>
-        <p onClick={() => handleDelete()}>Delete</p>
-      </div>
+      {currentUser &&
+        <div className='buttons'>
+          <Link to={`/dogs/${id}/edit`}>Edit</Link>
+          <button onClick={() => handleDelete()}>Delete</button>
+        </div>
+      }
     </div>
   );
 }

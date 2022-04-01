@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import DogDetail from '../../Components/DogDetail/DogDetail';
 import { fetchDogById } from '../../services/dogs';
 
-export default function DogDetailView() {
+export default function DogDetailView({ currentUser }) {
   const params = useParams();
   const dogId = params.id;
   const [dog, setDog] = useState({});
@@ -21,7 +21,7 @@ export default function DogDetailView() {
   if (loading) return (<h3>loading...</h3>);
   return (
     <div>
-      <DogDetail {...{ dog }} />
+      <DogDetail {...{ dog, currentUser }} />
     </div>
   );
 }
