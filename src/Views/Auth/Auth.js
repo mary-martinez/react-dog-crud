@@ -13,10 +13,8 @@ export default function Auth({ setCurrentUser }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // console.log('click');
       const resp = await signInUser(email, password);
       setCurrentUser(resp.email);
-      // console.log(resp, 'resp');
       history.push('/');
     } catch (e) {
       setError(e.message);
