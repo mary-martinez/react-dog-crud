@@ -15,7 +15,7 @@ export default function Auth({ setCurrentUser }) {
     try {
       // console.log('click');
       const resp = await signInUser(email, password);
-      setCurrentUser(resp);
+      setCurrentUser(resp.email);
       // console.log(resp, 'resp');
       history.push('/');
     } catch (e) {
