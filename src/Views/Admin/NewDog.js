@@ -10,17 +10,7 @@ export default function NewDog() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const history = useHistory();
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const data = await addANewDog(dog);
-  //     console.log('adding a dog', data);
-  //   };
-  //   fetchData();
-  // }, [dog]);
 
-  // setTimeout(() => {
-
-  // }, 2000); 
   const handleSubmit = async () => {
     try {
       await addANewDog(dog);
